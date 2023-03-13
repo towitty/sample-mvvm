@@ -1,18 +1,12 @@
 package com.yjkim.mvvmweather.viewmodel;
 
+import android.app.Application;
 
-import androidx.lifecycle.ViewModel;
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 
-public class BaseViewModel extends ViewModel {
-
-    public BaseViewModel() {
-        // TODO ViewModel 이 공통으로 가지고 있어야 할 것
-
-    }
-
-    @Override
-    protected void onCleared() {
-        super.onCleared();
-    }
-
-}
+//abstract class BaseViewModel extends AndroidViewModel {
+//    public BaseViewModel(@NonNull Application application) {
+//        super(application);
+//    }
+//}
