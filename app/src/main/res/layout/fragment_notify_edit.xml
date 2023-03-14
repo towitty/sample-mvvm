@@ -6,6 +6,12 @@
         <variable
             name="viewModel"
             type="com.yjkim.mvvmweather.viewmodel.NotifyViewModel" />
+        <variable
+            name="activity"
+            type="com.yjkim.mvvmweather.view.activity.MainActivity" />
+        <variable
+            name="fragment"
+            type="com.yjkim.mvvmweather.view.fragment.NotifyEditFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -69,7 +75,6 @@
             app:layout_constraintBottom_toBottomOf="@id/tv_writer"
             app:layout_constraintStart_toEndOf="@id/tv_writer"
             app:layout_constraintTop_toTopOf="@id/tv_writer"
-
             />
 
         <Button
@@ -78,8 +83,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
             android:text="작성하기"
-            android:onClick="@{viewModel.setNotifyData(editTitle, editContent, editWriter)}"
             android:textSize="30sp"
+            android:onClick="@{() -> viewModel.onClickDone(activity, editTitle.getText, editContent, editWriter)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

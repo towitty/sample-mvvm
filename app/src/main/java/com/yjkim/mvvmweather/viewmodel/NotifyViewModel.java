@@ -32,20 +32,18 @@ public class NotifyViewModel extends ViewModel {
         return notifyData;
     }
 
-    private void setNotify(TextView tvTitle, TextView tvContent, TextView tvWriter) {
-        String title = tvTitle.getText().toString();
-        String content = tvContent.getText().toString();
-        String writer = tvWriter.getText().toString();
-        String time = getNowTime();
+    public void onClickDone(Context context, String editTitle, String editContent, String editWriter) {
+        String timeNow = new SimpleDateFormat("yyyy년 MM월 dd일 HH시 mm분").format(new Date());
 
-        notifyData.setValue(new NotifyData(title, content, writer, time));
-    }
-
-    private String getNowTime() {
-        return new SimpleDateFormat("yyyy년 MM월 dd일 HH시 mm분").format(new Date());
+        notifyData.setValue(new NotifyData(editTitle, editContent, editWriter, timeNow));
+        Toast.makeText(context,"작성되었습니다.",Toast.LENGTH_SHORT).show();
     }
 
 //    public void onClickDone(Context context, View view) {
-//        Toast.makeText(context,"Button Click",Toast.LENGTH_SHORT).show();
+//
 //    }
+
+    public MutableLiveData<NotifyData> getNotifyData() {
+        return notifyData;
+    }
 }

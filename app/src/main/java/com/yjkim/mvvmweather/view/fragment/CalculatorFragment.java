@@ -29,6 +29,6 @@ public class CalculatorFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        viewModel = new ViewModelProvider(this, new ViewModelFactory()).get(CalculatorViewModel.class);
+        viewModel = new ViewModelProvider(this, new ViewModelFactory(requireContext())).get(CalculatorViewModel.class);
     }
 }

@@ -2,13 +2,13 @@ package com.yjkim.mvvmweather.model;
 
 public class NotifyData {
     private String title;
-    private String text;
+    private String content;
     private String writer;
     private String date;
 
-    public NotifyData(String title, String text, String writer, String date) {
+    public NotifyData(String title, String content, String writer, String date) {
         this.title = title;
-        this.text = text;
+        this.content = content;
         this.writer = writer;
         this.date = date;
     }
@@ -17,8 +17,8 @@ public class NotifyData {
         return title;
     }
 
-    public String getText() {
-        return text;
+    public String getContent() {
+        return content;
     }
 
     public String getWriter() {
@@ -33,8 +33,8 @@ public class NotifyData {
         this.title = title;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public void setWriter(String writer) {

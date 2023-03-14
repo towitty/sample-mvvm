@@ -1,6 +1,5 @@
 package com.yjkim.mvvmweather.viewmodel;
 
-import android.app.Application;
 import android.content.Context;
 
 import androidx.annotation.NonNull;
@@ -9,11 +8,12 @@ import androidx.lifecycle.ViewModelProvider;
 
 public class ViewModelFactory implements ViewModelProvider.Factory {
 
-//    private Context mContext;
-//    private static ViewModelFactory sViewModelFactory;
-//    private ViewModelFactory(Context context) {
-//        this.mContext = context;
-//    }
+    private Context mContext;
+
+    //    private static ViewModelFactory sViewModelFactory;
+    public ViewModelFactory(Context context) {
+        this.mContext = context;
+    }
 
 //    public static ViewModelFactory getInstance(Context context) {
 //        if (sViewModelFactory == null) {
@@ -29,9 +29,6 @@ public class ViewModelFactory implements ViewModelProvider.Factory {
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
         if (modelClass == NotifyViewModel.class) {
             return (T) new NotifyViewModel();
-        }
-        if (modelClass == EditViewModel.class) {
-            return (T) new EditViewModel();
         }
         if (modelClass == CalculatorViewModel.class) {
             return (T) new CalculatorViewModel();
